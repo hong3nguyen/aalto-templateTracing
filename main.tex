@@ -157,4 +157,44 @@ and this is an ordered list:
     \end{exampleblock}
 \end{frame} 
 
+
+\setbeamertemplate{background}{
+    \begin{tikzpicture}
+        %\shade[left color=blue,right color=red] (0,0) rectangle(\paperwidth,\paperheight);
+        \draw (0,0) node[inner sep=0] {\includegraphics[width=\paperwidth]{img/TriNguyen.jpg}};
+    \end{tikzpicture}
+}
+
+\begin{frame}
+    \begin{center}
+    \hspace{-4cm}
+    \color{darkblue}{\Huge{\textbf{Thank you}}}\\
+    \hspace{-4cm}
+    \color{darkblue}{\url{hong-tri.nguyen@aalto.fi}}
+    
+    \end{center}
+\end{frame}
+
+\begin{frame}[plain]
+        \makebox[\linewidth]{
+            \begin{tikzpicture}
+                \draw (0,0) node[inner sep=0] {\includegraphics[width=\paperwidth]{img/thief.jpg}};
+                \draw (-4.5,2.5) node{\color{darkorange}{\LARGE{
+                \colorbox{black}{\begin{minipage}{3.6cm}
+                \textbf{Questions???}
+                \end{minipage}}
+                }}};
+            \end{tikzpicture}
+        }
+    \end{frame}
+
+    \begin{frame}[plain]
+    \makebox[\linewidth]{
+    \begin{tikzpicture}
+        \draw (0,0) node[inner sep=0] {\includegraphics[width=\paperwidth]{img/Question-Oldman.jpg}};
+        \draw (-4.5,3) node{\color{darkorange}{\LARGE{\textbf{The show starts now !!!}}}};
+    \end{tikzpicture}
+    }
+    \end{frame}
+
 \end{document}
