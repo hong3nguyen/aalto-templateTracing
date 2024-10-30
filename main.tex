@@ -1,0 +1,149 @@
+% Inbuilt themes in beamer
+\documentclass[aspectratio=169]{beamer}
+
+
+\usepackage{ragged2e}
+\usepackage{tikz}
+\usepackage{hyperref}
+\xdefinecolor{darkorange}{rgb}{1.0,0.4039,0.1216}
+\setbeamercolor{frametitle}{fg=darkorange}
+\setbeamerfont{frametitle}{size=\LARGE,series=\bfseries}
+%\setbeamertemplate{footline}[frame number]  % or "page number"
+
+
+% Title page details: 
+\title{\textcolor{black}{\textbf{Lecture 4:  Vulnerability Diagnostics for Machine Learning Systems in Edge-Cloud Continuum}}}
+\author{Hong-Tri Nguyen\\ Department of Computer Science\\ \url{hong-tri.nguyen@aalto.fi}}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+%CS-E4660 Advanced Topics in Software Systems, Fall 2023
+
+\begin{document}
+
+% Title page frame
+% \begin{frame}
+
+%     \titlepage 
+% \end{frame}
+% Remove logo from the next slides
+\logo{}
+{
+\setbeamercolor{background canvas}{bg=darkorange, fg=white}
+\begin{frame}
+     \begin{figure}
+        \hspace{-13cm}
+        \vspace{1cm}
+        \includegraphics[scale=0.3]{img/aalto-white.pdf}
+    \end{figure}
+  %\titlepage 
+  \textcolor{white}{\LARGE{\textbf{Vulnerability Diagnostics for Machine Learning Systems in Edge-Cloud Continuum}}}\\
+  %\fontsize{6pt}{4pt}\selectfont\textcolor{white}{\textit{Hong-Tri Nguyen\\ Department of Computer Science\\ \url{hong-tri.nguyen@aalto.fi}}}
+  \vspace{0.5cm}
+  \begin{columns}
+      \begin{column}{0.58\textwidth}
+          \fontsize{10pt}{3pt}\selectfont\textcolor{white}{\textit{Hong-Tri Nguyen\\ Department of Computer Science}}\\
+          
+          \textit{\href{emailto:hong-tri.nguyen@aalto.fi}{hong-tri.nguyen@aalto.fi}}
+      \end{column}
+      \hspace{-2cm}
+      \begin{column}{0.5\textwidth}
+        \begin{FlushRight}
+          \fontsize{6pt}{4pt}\selectfont\textcolor{black}{CS-E4660 Advanced Topics in Software Systems, Fall 2024\\\today}
+        \end{FlushRight}
+      \end{column}
+  \end{columns}
+  
+\end{frame}
+}
+
+\setbeamertemplate{footline}{%
+    \textcolor{darkorange}{\hrule}
+    \fboxsep=0pt
+    \noindent\fbox{%
+        \begin{minipage}[t]{0.48\linewidth}
+        \mbox{\includegraphics[height=1.3 cm]{img/aaltologo.pdf}} 
+        \end{minipage}}%
+    \hfill%
+    \fbox{%
+        \begin{minipage}[t]{0.48\linewidth}
+        \begin{FlushRight}
+            CS-E4660 Advanced Topics in Software Systems, Fall 2024
+        \end{FlushRight}
+        \end{minipage}
+    }
+}
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+\setbeamertemplate{footline}
+{%
+
+  %\textcolor{darkorange}{\hrule}
+  %\makebox[\dimexpr\linewidth-0.2cm][c]{\color{darkorange}\rule{\textwidth}{0.4pt}}
+  %\par\noindent\makebox[\textwidth][r]{\hrule{1.02\textwidth}{0.4pt}}
+ \makebox[\linewidth][c]{%
+  \hspace*{1.5cm}\color{darkorange}\rule{\dimexpr\textwidth-1.7cm\relax}{0.6pt}}%\hspace*{-2cm}}
+  
+  \vspace{6mm}
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,left]{date in head/foot}%
+    \hspace{0.5cm}\usebeamerfont{date in head/foot}\mbox{\includegraphics[height=0.70 cm]{img/tri-aalto-line.pdf}}
+  \end{beamercolorbox}%  
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}
+  \end{beamercolorbox}%
+
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=5ex,right]{title in head/foot}%
+    \hfill\usebeamercolor[fg]{page number in head/foot}CS-E4660 Advanced Topics in Software Systems\newline Fall 2024 \newline \usebeamerfont{page number in head/foot}\usebeamertemplate{page number in head/foot}% \hspace{2ex}
+  \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+
+
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+
+\end{frame}
+
+
+% Lists frame
+\section{Lists in Beamer}
+\begin{frame}{Lists in Beamer}
+
+This is an unordered list:
+\begin{itemize}
+    \item Item 1
+    \item Item 2
+    \item Item 3
+\end{itemize}
+
+and this is an ordered list:
+\begin{enumerate}
+    \item Item 1
+    \item Item 2
+    \item Item 3
+\end{enumerate}
+
+\end{frame}
+
+
+% Blocks frame
+\section{Blocks in Beamer}
+\begin{frame}{Blocks in Beamer}
+    \begin{block}{Standard Block}
+        This is a standard block.
+    \end{block}
+    \begin{alertblock}{Alert Message}
+        This block presents alert message.
+    \end{alertblock}
+    \begin{exampleblock}{An example of typesetting tool}
+        Example: MS Word, \LaTeX{}
+    \end{exampleblock}
+\end{frame} 
+
+\end{document}
