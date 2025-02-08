@@ -85,6 +85,18 @@
     }
 }
 \setbeamertemplate{page number in head/foot}[totalframenumber]
+% Store footnotes in a global variable
+\newbox\footnotebox
+\setbox\footnotebox=\vbox{} % Initialize empty box
+
+% Custom footnote command with numbering
+\renewcommand{\footnote}[1]{%
+  \stepcounter{footnote}%
+  \global\setbox\footnotebox=\vbox{\unvbox\footnotebox 
+    \hbox{\tiny \textsuperscript{\thefootnote} #1}}%
+  \textsuperscript{\thefootnote} % Show number in main text
+}
+
 \setbeamertemplate{footline}
 {%
 
@@ -97,21 +109,26 @@
   \vspace{6mm}
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,left]{date in head/foot}%
+  \begin{beamercolorbox}[wd=.22\paperwidth,ht=2.25ex,dp=1ex,left]{date in head/foot}%
     \hspace{0.5cm}\usebeamerfont{date in head/foot}\mbox{\includegraphics[height=0.70 cm]{img/tri-aalto-line.pdf}}
   \end{beamercolorbox}%  
-  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
-    \usebeamerfont{author in head/foot}
+  \begin{beamercolorbox}[wd=.21\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+     \usebeamerfont{author in head/foot}
+        {\textcolor{black}{\tiny \unvbox\footnotebox}} % Show stored footnotes here
   \end{beamercolorbox}%
-
   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=5ex,right]{title in head/foot}%
-    \hfill\usebeamercolor[fg]{page number in head/foot}CS-E4660 Advanced Topics in Software Systems\newline Fall 2024 \newline \usebeamerfont{page number in head/foot}\usebeamertemplate{page number in head/foot}% \hspace{2ex}
+    \hfill\usebeamercolor[fg]{page number in head/foot} CS-E4640 Big Data Platforms \newline Spring 2025\newline \usebeamerfont{page number in head/foot}\usebeamertemplate{page number in head/foot}% \hspace{2ex}
   \end{beamercolorbox}%
   }%
   \vskip0pt%
 }
+\begin{document}
 
-
+\begin{frame}{Example Slide}
+    This is a slide with a footnote.\footnote{This is my custom footnote.}
+    This is a slide with a footnote.\footnote{This is my custom footnote.}
+    This is a slide with a footnote.\footnote{This is my custom footnote.}
+\end{frame}
 
 
 
